@@ -12,8 +12,6 @@ npm start
 ```
 Abre http://localhost:3000
 
-SQLite se crea automáticamente en `mathflow.db`. Para respaldar tus datos, detén el servidor y copia ese archivo.
-
 ## API
 - `GET /api/tasks` lista actividades.
 - `POST /api/tasks` crea actividad `{ "title": "Integrales", "day": "2026-11-02", "time": "16:00" }`.
