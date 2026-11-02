@@ -1,0 +1,1 @@
+{"name":"mathflow","version":"1.0.0","type":"module","scripts":{"start":"node server.js"},"dependencies":{"express":"^4.21.2","better-sqlite3":"^11.8.1"},"allowScripts":{"better-sqlite3@11.10.0":true}}
