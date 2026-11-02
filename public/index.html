@@ -1,1 +1,75 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>MathFlow — Tu espacio de estudio</title><link rel="stylesheet" href="style.css"><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.2.0/math.min.js"></script><script defer src="app.js"></script></head><body><div class="layout"><aside><div class="logo">∫ <span>MathFlow</span></div><p class="muted">TU ESPACIO DE ESTUDIO</p><nav><a href="#dashboard">◈ Resumen</a><a href="#agenda">▦ Mi horario</a><a href="#integral">∫ Integral del día</a></nav><div class="side-bottom">Constancia > intensidad.<br>Un ejercicio a la vez.</div></aside><main><header><div><p class="eyebrow">ORGANIZA · PRACTICA · AVANZA</p><h1>Tu progreso comienza hoy.</h1><p class="muted">Un espacio tranquilo para construir tu disciplina matemática.</p></div><div class="date" id="currentDate"></div></header><section id="dashboard" class="stats"><article class="stat"><span>ACTIVIDADES</span><strong id="total">0</strong><small>En tu agenda</small></article><article class="stat"><span>COMPLETADAS</span><strong id="done">0</strong><small>Pasos hacia tu meta</small></article><article class="stat"><span>INTEGRALES</span><strong id="solved">0</strong><small>Días de práctica</small></article></section><div class="columns"><section class="panel" id="agenda"><div class="section-head"><div><p class="eyebrow">PLANIFICACIÓN</p><h2>Mi horario</h2></div></div><form id="taskForm"><input id="title" maxlength="120" placeholder="Ej. Practicar integración por partes" required><div class="form-row"><input id="day" type="date" required><input id="time" type="time" required><button type="submit">+ Agregar</button></div></form><div class="list" id="tasks"></div></section><section class="panel integral" id="integral"><p class="eyebrow">DESAFÍO DIARIO</p><div class="section-head"><h2>Integral del día</h2><span class="pill">∞ Practica</span></div><p class="muted">Un nuevo ejercicio cada día. Resuélvelo y comprueba tu resultado.</p><div class="equation" id="equation">Cargando…</div><label for="answer">Tu respuesta (sin +C)</label><input id="answer" placeholder="Ej. x^2, sin(x), log(abs(x))"><div class="form-row"><button id="check" type="button">Comprobar respuesta</button><button class="secondary" id="hint" type="button">Pista</button></div><p id="feedback" class="feedback" aria-live="polite"></p><p class="muted fine">Admite expresiones como x^2, sin(x), cos(x), exp(x), log(abs(x)), atan(x). Comprobación numérica aproximada.</p></section></div><footer>MathFlow · Estudia a tu ritmo · Los datos se guardan en tu computador</footer></main></div></body></html>
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MathFlow — Tu espacio de estudio</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.2.0/math.min.js"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <div class="layout">
+        <aside>
+            <div class="logo">∫ <span>MathFlow</span></div>
+            <p class="muted">TU ESPACIO DE ESTUDIO</p>
+            <nav><a href="#dashboard">◈ Resumen</a><a href="#agenda">▦ Mi horario</a><a href="#integral">∫ Integral del
+                    día</a></nav>
+            <div class="side-bottom">Constancia > intensidad.<br>Un ejercicio a la vez.</div>
+        </aside>
+        <main>
+            <header>
+                <div>
+                    <p class="eyebrow">ORGANIZA · PRACTICA · AVANZA</p>
+                    <h1>Tu progreso comienza hoy.</h1>
+                    <p class="muted">Un espacio tranquilo para construir tu disciplina matemática.</p>
+                </div>
+                <div class="date" id="currentDate"></div>
+            </header>
+            <section id="dashboard" class="stats">
+                <article class="stat"><span>ACTIVIDADES</span><strong id="total">0</strong><small>En tu agenda</small>
+                </article>
+                <article class="stat"><span>COMPLETADAS</span><strong id="done">0</strong><small>Pasos hacia tu
+                        meta</small></article>
+                <article class="stat"><span>INTEGRALES</span><strong id="solved">0</strong><small>Días de
+                        práctica</small></article>
+            </section>
+            <div class="columns">
+                <section class="panel" id="agenda">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">PLANIFICACIÓN</p>
+                            <h2>Mi horario</h2>
+                        </div>
+                    </div>
+                    <form id="taskForm"><input id="title" maxlength="120"
+                            placeholder="Ej. Practicar integración por partes" required>
+                        <div class="form-row"><input id="day" type="date" required><input id="time" type="time"
+                                required><button type="submit">+ Agregar</button></div>
+                    </form>
+                    <div class="list" id="tasks"></div>
+                </section>
+                <section class="panel integral" id="integral">
+                    <p class="eyebrow">DESAFÍO DIARIO</p>
+                    <div class="section-head">
+                        <h2>Integral del día</h2><span class="pill">∞ Practica</span>
+                    </div>
+                    <p class="muted">Un nuevo ejercicio cada día. Resuélvelo y comprueba tu resultado.</p>
+                    <div class="equation" id="equation">Cargando…</div><label for="answer">Tu respuesta (sin
+                        +C)</label><input id="answer" placeholder="Ej. x^2, sin(x), log(abs(x))">
+                    <div class="form-row"><button id="check" type="button">Comprobar respuesta</button><button
+                            class="secondary" id="hint" type="button">Pista</button></div>
+                    <p id="feedback" class="feedback" aria-live="polite"></p>
+                    <p class="muted fine">Admite expresiones como x^2, sin(x), cos(x), exp(x), log(abs(x)), atan(x).
+                        Comprobación numérica aproximada.</p>
+                </section>
+            </div>
+            <footer>MathFlow · Estudia a tu ritmo · Los datos se guardan en tu computador</footer>
+        </main>
+    </div>
+</body>
+
+</html>
